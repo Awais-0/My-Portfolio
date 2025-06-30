@@ -1,0 +1,31 @@
+import HeroSection from "./HeroSection";
+import Works from './Projects';
+import SkillsSection from "./SkillsSection";
+import AboutSection from "./AboutSection";
+
+const Home = () => {
+  return (
+    <main className="pt-20 md:pt-24 pb-12 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black min-h-screen transition-all duration-300">
+      {/* Hero Section */}
+      <section id="home">
+      <HeroSection />
+      </section>
+      
+      <section id="about">
+      <AboutSection />
+      </section>
+      
+
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16" id="projects">
+        <Works />
+      </section>
+      
+      <section id="skills">
+        <SkillsSection />
+      </section>
+
+    </main>
+  );
+};
+
+export default Home;
