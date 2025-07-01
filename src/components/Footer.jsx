@@ -6,7 +6,14 @@ import {
   FiGithub
 } from "react-icons/fi";
 
+
+
 const Footer = () => {
+  const socialLinks = [
+    { icon: FiGithub, href: "https://github.com/Awais-0" },
+    { icon: FiFacebook, href: "#" },
+    { icon: FiLinkedin, href: "https://www.linkedin.com/in/awais-raza-88262022a/" },
+  ];
   return (
     <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-gray-300 py-10 mt-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
@@ -28,15 +35,15 @@ const Footer = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="flex justify-center md:justify-end space-x-6"
         >
-          {[FiGithub, FiFacebook, FiInstagram, FiLinkedin].map((Icon, index) => (
+          {socialLinks.map((Icon, index) => (
             <motion.a
               key={index}
-              href="#"
+              href={Icon.href}
               whileHover={{ scale: 1.2, rotate: 8 }}
               whileTap={{ scale: 0.95 }}
               className="text-gray-400 hover:text-violet-500 transition-colors duration-300"
             >
-              <Icon className="w-6 h-6" />
+              <Icon.icon className="w-6 h-6" />
             </motion.a>
           ))}
         </motion.div>

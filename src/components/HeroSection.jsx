@@ -17,7 +17,7 @@ const HeroSection = () => {
                 delay:1.3,
                 duration:1
             }}
-            className='text-2xl md:text-4xl lg:text-6xl font-bold z-10 mb-6'>
+            className='text-lg md:text-4xl lg:text-6xl font-bold z-10 mb-6'>
                 Hi, <br />  Welcome to my portfolio
             </motion.h1>
             <motion.p
@@ -30,13 +30,13 @@ const HeroSection = () => {
                 delay:1.8,
                 duration:1
             }}
-            className="text-xl md:text-1xl lg:text-1xl text-gray-400 max-w-2xl">
+            className="text-md md:text-1xl lg:text-1xl text-gray-400 max-w-2xl bottom-[-10%]">
                 Coding wizard by day, coffee enthusiast by night — I create interactive sites that are as fun as they are functional. Ready to make something awesome?
             </motion.p>
         </div>
 
         {/* Right section */}
-        <Spline className="absolute xl:right-[-25%] right-0 top-[-20%] lg:top-0" scene="https://prod.spline.design/CzkPiUy71z9jqImO/scene.splinecode" />
+        <Spline className="absolute" scene="https://prod.spline.design/yxR5t2ee487HMCyF/scene.splinecode" />
     </section>
   )
 }

@@ -12,9 +12,9 @@ const Header = () => {
     const toggleMenu = () => setisOpen(!isOpen)
     const navLinks = ["Home", "About", "Projects", "Skills"]
     const socialLinks = [
-        { icon: FiGithub, href: "#" },
+        { icon: FiGithub, href: "https://github.com/Awais-0" },
         { icon: FiFacebook, href: "#" },
-        { icon: FiLinkedin, href: "#" },
+        { icon: FiLinkedin, href: "https://www.linkedin.com/in/awais-raza-88262022a/" },
       ];
   return (
     <header className="fixed w-full z-50 transition-all duration-300">
