@@ -36,7 +36,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right section */}
-        <Spline className="absolute" scene="https://prod.spline.design/yxR5t2ee487HMCyF/scene.splinecode" />
+        {/* <Spline className="absolute" scene="https://prod.spline.design/yxR5t2ee487HMCyF/scene.splinecode" /> */}
     </section>
   )
 }
