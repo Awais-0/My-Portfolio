@@ -1,5 +1,7 @@
 import { DiReact, DiGithubBadge, DiJavascript1, DiHtml5, DiCss3, DiPython, DiDjango, DiCode, DiNodejs } from "react-icons/di";
 import { SiRedux, SiCplusplus, SiTailwindcss } from "react-icons/si";
+import { RiSketching } from "react-icons/ri";
+
 
 export const Skills = [
   {
@@ -70,7 +72,7 @@ export const Skills = [
   },
   {
     slug: "graphic-designing",
-    Component: DiCode,
+    Component: RiSketching,
     title: "Graphic Designing",
     Description: () => <>Creating UI/UX assets and visuals</>,
   },

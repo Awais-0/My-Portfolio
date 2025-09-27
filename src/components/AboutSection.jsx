@@ -14,13 +14,25 @@ const AboutSection = () => {
           About Me
         </h2>
         <p className="mt-4 max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-md">
-          I’m a passionate <span className="font-semibold text-indigo-600 dark:text-indigo-400">Full-Stack Developer</span> with expertise in building responsive web applications and engaging user experiences. From frontend interfaces in React to scalable backends with Django, I enjoy crafting clean, efficient, and maintainable code. I love learning new technologies and solving complex problems.
+          I’m a passionate{" "}
+          <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+            Full-Stack Developer
+          </span>{" "}
+          with expertise in building responsive web applications and engaging
+          user experiences. From frontend interfaces in React to scalable
+          backends with Django & NodeJs, I enjoy crafting clean, efficient, and
+          maintainable code. I love learning new technologies and solving
+          complex problems.
         </p>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.6 } }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.3, duration: 0.6 },
+        }}
         viewport={{ once: true }}
         className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8"
       >
@@ -29,7 +41,9 @@ const AboutSection = () => {
             My Mission
           </h3>
           <p className="text-gray-600 dark:text-gray-400 text-md">
-            Deliver high-quality, maintainable, and performant applications that provide great user experiences, solve real-world problems, and contribute to meaningful projects.
+            Deliver high-quality, maintainable, and performant applications that
+            provide great user experiences, solve real-world problems, and
+            contribute to meaningful projects.
           </p>
         </div>
 
@@ -38,7 +52,9 @@ const AboutSection = () => {
             What Drives Me
           </h3>
           <p className="text-gray-600 dark:text-gray-400 text-md">
-            A passion for technology, creativity, and continuous learning. I thrive on turning complex ideas into intuitive, user-friendly products that make a positive impact.
+            A passion for technology, creativity, and continuous learning. I
+            thrive on turning complex ideas into intuitive, user-friendly
+            products that make a positive impact.
           </p>
         </div>
       </motion.div>

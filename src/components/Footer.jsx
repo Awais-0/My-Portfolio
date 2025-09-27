@@ -13,11 +13,12 @@ const Footer = () => {
     { icon: FiGithub, href: "https://github.com/Awais-0" },
     { icon: FiFacebook, href: "#" },
     { icon: FiLinkedin, href: "https://www.linkedin.com/in/awais-raza-88262022a/" },
+    { icon: FiInstagram, href: "https://www.instagram.com/1_awais_raza/" }
   ];
   return (
     <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-gray-300 py-10 mt-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-        
+
         {/* Left: Copyright */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}

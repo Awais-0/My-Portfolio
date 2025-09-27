@@ -9,4 +9,5 @@ body {
     position: relative;
     background-color: black;
     color: white;
+    scrollbar-width: none;
 }

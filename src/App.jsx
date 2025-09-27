@@ -1,9 +1,10 @@
-import Home from './components/Home'
-import Layout from './components/Layout'
+import Home from './pages/Home'
+import Layout from './pages/Layout'
 
 const App = () => {
   return (
     <Layout>
+      
       <Home />
     </Layout>
   )

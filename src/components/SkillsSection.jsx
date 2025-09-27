@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Skills } from "./Skills"; // Adjust the path if needed
+import { Skills } from "../data/Skills";
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -19,6 +19,9 @@ const SkillsSection = () => {
         <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white">
           My Skills
         </h2>
+        <p className="mt-2 text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Current field of expertise: <span className="mt-2 text-center text-blue-700 dark:text-[#7C86FF]">Web Development</span>
+        </p>
         <p className="mt-2 text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Here are the main technologies and tools I use in my projects.
         </p>
