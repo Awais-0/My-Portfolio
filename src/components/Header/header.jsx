@@ -1,12 +1,17 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { FiFacebook, FiGithub, FiLinkedin, FiMenu, FiX } from 'react-icons/fi'
+import { FiFacebook, FiGithub, FiLinkedin, FiMenu, FiX, FiMoon, FiSun } from 'react-icons/fi'
 import ContactFormModal from "./ContactFormModal";
 import MobileNav from "./mobileNav";
+import { useTheme } from "../../context/ThemeContext"
+import { useScrollProgress } from "../../hooks/useScroll"
 
 const Header = () => {
     const [isOpen, setisOpen] = useState(false);
     const [contactFormOpen, setContactFormOpen] = useState(false);
+    const { isDark, toggleTheme } = useTheme();
+    const scrollProgress = useScrollProgress();
+    
     const openContactForm = () => setContactFormOpen(true)
     const closeContactForm = () => setContactFormOpen(false)
     const toggleMenu = () => setisOpen(!isOpen)
@@ -18,7 +23,13 @@ const Header = () => {
     ];
     return (
         <header className="fixed w-full z-50 transition-all duration-300">
-            <div className="h-16 md:h-20 container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between backdrop-blur-lg bg-black/40">
+            {/* Scroll progress bar */}
+            <motion.div 
+              className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500"
+              style={{ width: `${scrollProgress}%` }}
+              initial={{ width: 0 }}
+            />
+            <div className="h-16 md:h-20 container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between backdrop-blur-lg bg-black/40 dark:bg-black/60">
                 {/* Logo, name */}
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
@@ -69,7 +80,7 @@ const Header = () => {
                 </nav>
 
 
-                {/* Social Links */}
+                {/* Social Links & Theme Toggle */}
                 <div className="md:flex hidden items-center space-x-4">
                     {/* github */}
                     {
@@ -84,6 +95,17 @@ const Header = () => {
                         ))
                     }
 
+                    {/* Dark mode toggle */}
+                    <motion.button
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 1.1, duration: 0.8 }}
+                        onClick={toggleTheme}
+                        className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-yellow-400 hover:bg-gray-300 dark:hover:bg-gray-700 transition-all"
+                    >
+                        {isDark ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
+                    </motion.button>
+
                     {/* Hire me */}
                     <motion.button
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -96,7 +118,16 @@ const Header = () => {
                 </div>
 
                 {/* Mobile Navigation - Menu button */}
-                <div className="md:hidden flex items-center">
+                <div className="md:hidden flex items-center gap-2">
+                    <motion.button
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.5, duration: 0.8 }}
+                        onClick={toggleTheme}
+                        className="p-2 rounded-lg bg-gray-700 dark:bg-gray-800 text-gray-300 dark:text-yellow-400"
+                    >
+                        {isDark ? <FiSun className="w-4 h-4" /> : <FiMoon className="w-4 h-4" />}
+                    </motion.button>
                     <motion.button
                         whileTap={{ scale: 0.7 }}
                         onClick={toggleMenu}

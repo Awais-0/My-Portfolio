@@ -1,7 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FiCode, FiTarget, FiTrendingUp } from "react-icons/fi";
 
 const AboutSection = () => {
+  const features = [
+    {
+      icon: FiCode,
+      title: "Clean Code",
+      description: "Writing maintainable, efficient, and scalable code that stands the test of time."
+    },
+    {
+      icon: FiTarget,
+      title: "Problem Solver",
+      description: "Turning complex ideas into intuitive, user-friendly products that make an impact."
+    },
+    {
+      icon: FiTrendingUp,
+      title: "Continuous Growth",
+      description: "Always learning new technologies and staying up-to-date with industry trends."
+    }
+  ];
   return (
     <section className="container mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-40 md:mb-20 sm:mb-15 scroll-mt-24">
       <motion.div
@@ -10,7 +28,7 @@ const AboutSection = () => {
         viewport={{ once: true }}
         className="text-center"
       >
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
           About Me
         </h2>
         <p className="mt-4 max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-md">

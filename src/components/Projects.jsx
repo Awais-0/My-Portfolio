@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 import {projects} from "../data/projects";
 
 // Simple fadeIn animation
@@ -27,43 +27,63 @@ const ProjectCard = ({
     initial="initial"
     whileInView="animate"
     viewport={{ once: true }}
-    className="flex flex-col w-full max-w-xs rounded-2xl bg-gray-900 p-5 shadow-lg"
+    whileHover={{ y: -10, transition: { duration: 0.3 } }}
+    className="flex flex-col w-full max-w-xs rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-800 dark:to-black p-5 shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border border-gray-700 dark:border-gray-600"
   >
-    <div className="relative h-56 w-full overflow-hidden rounded-xl">
-      <img src={image} alt={name} className="h-full w-full object-cover" />
-      <div className="absolute right-2 top-2">
-        <button
+    <div className="relative h-56 w-full overflow-hidden rounded-xl group">
+      <img 
+        src={image} 
+        alt={name} 
+        className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500" 
+      />
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
           onClick={() => window.open(sourceCodeLink, "_blank")}
-          className="rounded-full bg-black/60 p-2 text-white hover:bg-black"
+          className="rounded-full bg-white/20 backdrop-blur-sm p-3 text-white hover:bg-white/30 transition-all"
+          title="View Source Code"
         >
-          <FiGithub size={20} />
-        </button>
+          <FiGithub size={24} />
+        </motion.button>
+        {demoLink && (
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.open(demoLink, "_blank")}
+            className="rounded-full bg-white/20 backdrop-blur-sm p-3 text-white hover:bg-white/30 transition-all"
+            title="View Demo"
+          >
+            <FiExternalLink size={24} />
+          </motion.button>
+        )}
       </div>
     </div>
 
+    <div className="mt-4 flex-1">
+      <motion.h3 
+        className="text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
+        whileHover={{ scale: 1.05 }}
+      >
+        {name}
+      </motion.h3>
+      <p className="mt-2 text-sm text-gray-300 dark:text-gray-400">{description}</p>
+    </div>
+    
     <div className="mt-4">
-      <h3 className="text-lg font-bold text-white">{name}</h3>
-      <p className="mt-1 text-sm text-gray-400">{description}</p>
-    </div>
-    <h6 className="mt-3 font-bold text-sm text-white">Technologies:</h6>
-    <div className="mt-1 flex flex-wrap gap-2">
-      {tags.map((tag) => (
-        <span key={tag.name} className={`text-xs ${tag.color}`}>
-          #{tag.name}
-        </span>
-      ))}
-    </div>
-    {demoLink && (
-      <div>
-        <h6 className="mt-3 font-bold text-sm text-white">Demo:</h6>
-        <a
-          href={demoLink}
-          className="mt-1 text-sm text-blue-400 hover:cursor-pointer hover:underline"
-        >
-          Click here to try this app
-        </a>
+      <h6 className="font-bold text-xs text-gray-300 dark:text-gray-400 uppercase tracking-wider">Technologies:</h6>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <motion.span 
+            key={tag.name}
+            whileHover={{ scale: 1.1 }}
+            className={`text-xs px-3 py-1 rounded-full bg-gray-700/50 dark:bg-gray-700/70 backdrop-blur-sm ${tag.color} font-semibold`}
+          >
+            {tag.name}
+          </motion.span>
+        ))}
       </div>
-    )}
+    </div>
   </motion.div>
 );
 
@@ -72,15 +92,15 @@ const Works = () => {
     <section className="px-4 py-10 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
       >
-        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
           My Projects
         </h2>
-        <p className="mt-2 text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Below are some of the projects I’ve worked on. Click the GitHub icon
-          to view source code.
+        <p className="mt-4 text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Showcase of projects I've built. Hover to explore, click GitHub to view code, and click the external link to try live demos.
         </p>
       </motion.div>
 

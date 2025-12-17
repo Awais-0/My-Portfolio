@@ -1,12 +1,14 @@
 import Home from './pages/Home'
 import Layout from './pages/Layout'
+import { ThemeProvider } from './context/ThemeContext'
 
 const App = () => {
   return (
-    <Layout>
-      
-      <Home />
-    </Layout>
+    <ThemeProvider>
+      <Layout>
+        <Home />
+      </Layout>
+    </ThemeProvider>
   )
 }
 

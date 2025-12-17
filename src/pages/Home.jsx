@@ -2,6 +2,7 @@ import HeroSection from "../components/HeroSection";
 import Works from '../components/Projects';
 import SkillsSection from "../components/SkillsSection";
 import AboutSection from "../components/AboutSection";
+import TestimonialsSection from "../components/TestimonialsSection";
 
 const Home = () => {
   return (
@@ -22,6 +23,10 @@ const Home = () => {
       
       <section id="skills" className="scroll-mt-24">
         <SkillsSection />
+      </section>
+
+      <section id="testimonials" className="scroll-mt-24">
+        <TestimonialsSection />
       </section>
 
     </main>
