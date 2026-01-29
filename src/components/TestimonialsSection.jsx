@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
   });
 
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-20 scroll-mt-24">
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
@@ -50,7 +50,7 @@ const TestimonialsSection = () => {
         {testimonials.map((testimonial, index) => (
           <motion.div
             key={index}
-            className="bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-800 dark:to-black rounded-xl border border-gray-700 dark:border-gray-600 p-6 hover:shadow-2xl hover:shadow-blue-500/20 transition-all"
+            className="bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-black rounded-xl border border-gray-100 dark:border-gray-700 p-6 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 transition-all"
             {...fadeInUp(index * 0.2)}
             whileHover={{ y: -5 }}
           >
@@ -59,14 +59,14 @@ const TestimonialsSection = () => {
                 <FiStar key={i} className="text-yellow-400 fill-yellow-400" size={16} />
               ))}
             </div>
-            <p className="text-gray-300 dark:text-gray-400 mb-6 italic">
+            <p className="text-gray-600 dark:text-gray-400 mb-6 italic">
               "{testimonial.feedback}"
             </p>
             <div className="flex items-center gap-3">
               <div className="text-3xl">{testimonial.avatar}</div>
               <div>
-                <h4 className="font-bold text-white">{testimonial.name}</h4>
-                <p className="text-sm text-gray-400">{testimonial.role}</p>
+                <h4 className="font-bold text-gray-900 dark:text-white">{testimonial.name}</h4>
+                <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
               </div>
             </div>
           </motion.div>

@@ -28,7 +28,7 @@ const ProjectCard = ({
     whileInView="animate"
     viewport={{ once: true }}
     whileHover={{ y: -10, transition: { duration: 0.3 } }}
-    className="flex flex-col w-full max-w-xs rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-800 dark:to-black p-5 shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border border-gray-700 dark:border-gray-600"
+    className="flex flex-col w-full max-w-xs rounded-2xl bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-black p-5 shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border border-gray-100 dark:border-gray-700"
   >
     <div className="relative h-56 w-full overflow-hidden rounded-xl group">
       <img 
@@ -67,17 +67,17 @@ const ProjectCard = ({
       >
         {name}
       </motion.h3>
-      <p className="mt-2 text-sm text-gray-300 dark:text-gray-400">{description}</p>
+      <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{description}</p>
     </div>
     
     <div className="mt-4">
-      <h6 className="font-bold text-xs text-gray-300 dark:text-gray-400 uppercase tracking-wider">Technologies:</h6>
+      <h6 className="font-bold text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">Technologies:</h6>
       <div className="mt-2 flex flex-wrap gap-2">
         {tags.map((tag) => (
           <motion.span 
             key={tag.name}
             whileHover={{ scale: 1.1 }}
-            className={`text-xs px-3 py-1 rounded-full bg-gray-700/50 dark:bg-gray-700/70 backdrop-blur-sm ${tag.color} font-semibold`}
+            className={`text-xs px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700/70 backdrop-blur-sm ${tag.color} font-semibold`}
           >
             {tag.name}
           </motion.span>
@@ -89,7 +89,7 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <section className="px-4 py-10 scroll-mt-24">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ const Works = () => {
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

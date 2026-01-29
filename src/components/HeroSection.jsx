@@ -20,7 +20,7 @@ const HeroSection = () => {
   }
 
   return (
-    <section className='h-screen bg-gradient-to-br from-indigo-950 via-blue-900 to-black flex xl:flex-row flex-col-reverse items-center justify-between lg:px-10 px-10 relative overflow-hidden scroll-mt-24'>
+    <section id="home" className='min-h-screen pt-20 md:pt-24 bg-gradient-to-br from-blue-50 via-white to-gray-100 dark:from-indigo-950 dark:via-blue-900 dark:to-black relative overflow-hidden flex items-center transition-colors duration-500'>
         {/* Animated background elements */}
         <motion.div 
           className="absolute top-10 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"
@@ -33,8 +33,9 @@ const HeroSection = () => {
           transition={{ duration: 10, repeat: Infinity }}
         />
         
-        {/* left section */}
-        <div className="z-30 xl:mb-0 mb-[20%]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex xl:flex-row flex-col-reverse items-center justify-between relative z-10">
+            {/* left section */}
+            <div className="z-30 xl:mb-0 mb-12 lg:w-1/2">
             <motion.h1
             initial={{opacity:0, y:80}}
             animate={{opacity:1, y:0}}
@@ -45,7 +46,7 @@ const HeroSection = () => {
                 delay:0.2,
                 duration:1
             }}
-            className='text-lg md:text-4xl lg:text-6xl font-bold z-10 mb-6 pointer-events-none bg-gradient-to-r from-white via-blue-200 to-cyan-200 bg-clip-text text-transparent'>
+            className='text-lg md:text-4xl lg:text-6xl font-bold z-10 mb-6 pointer-events-none bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 dark:from-white dark:via-blue-200 dark:to-cyan-200 bg-clip-text text-transparent'>
                 Hi, <br /> Welcome to my portfolio
             </motion.h1>
             <motion.p
@@ -58,8 +59,8 @@ const HeroSection = () => {
                 delay:0.5,
                 duration:1
             }}
-            className="text-md md:text-lg lg:text-xl text-gray-300 max-w-2xl pointer-events-none leading-relaxed">
-                Coding wizard by day, coffee enthusiast by night — I create interactive sites that are as fun as they are functional. Ready to make something awesome?
+            className="text-md md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-2xl pointer-events-none leading-relaxed">
+                Coding wizard by day, sleep enthusiast by night — I create interactive sites that are as fun as they are functional. Ready to make something awesome?
             </motion.p>
 
             {/* CTA Buttons */}
@@ -91,7 +92,11 @@ const HeroSection = () => {
         {/* Right section */}
         {/* <Spline className="absolute" scene="https://prod.spline.design/yxR5t2ee487HMCyF/scene.splinecode" /> */}
         {/* <Spline  scene="https://prod.spline.design/nd4Y1CXLh5S3wqGA/scene.splinecode" /> */}
-        <Spline className="absolute" scene="https://prod.spline.design/nd4Y1CXLh5S3wqGA/scene.splinecode" />
+        <div className="lg:w-1/2 h-[300px] md:h-[400px] lg:h-[500px] w-full relative">
+            <Spline className="w-full h-full" scene="https://prod.spline.design/nd4Y1CXLh5S3wqGA/scene.splinecode" />
+        </div>
+
+        </div>
 
         {/* Scroll indicator */}
         <motion.div 
