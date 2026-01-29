@@ -22,14 +22,14 @@ const Header = () => {
         { icon: FiLinkedin, href: "https://www.linkedin.com/in/awais-raza-88262022a/" },
     ];
     return (
-        <header className="fixed w-full z-50 transition-all duration-300">
+        <header className="fixed w-full z-50 transition-all duration-300 backdrop-blur-lg bg-white/70 dark:bg-black/60 border-b border-gray-200 dark:border-white/10">
             {/* Scroll progress bar */}
             <motion.div 
-              className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500"
+              className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 z-50"
               style={{ width: `${scrollProgress}%` }}
               initial={{ width: 0 }}
             />
-            <div className="h-16 md:h-20 container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between backdrop-blur-lg bg-black/40 dark:bg-black/60">
+            <div className="h-16 md:h-20 container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
                 {/* Logo, name */}
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
@@ -50,7 +50,7 @@ const Header = () => {
                         />
                     </div>
 
-                    <span className="text-xl font-bold bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">M Awais Raza</span>
+                    <span className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-300 dark:to-gray-100 bg-clip-text text-transparent">M Awais Raza</span>
                 </motion.div>
 
                 {/* Navigation Bar Desktop */}
@@ -111,7 +111,7 @@ const Header = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 1.2, duration: 0.8, type: 'spring', stiffness: 100, damping: 15 }}
-                        className="ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-400 to-gray-100 text-violet-700 font-bold hover:from-violet-700 hover:to-purple-700 hover:text-white transition-all duration-500"
+                        className="ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold hover:from-violet-700 hover:to-purple-700 transition-all duration-500 shadow-md hover:shadow-lg"
                         onClick={openContactForm}>
                         Hire me
                     </motion.button>

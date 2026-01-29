@@ -21,7 +21,7 @@ const AboutSection = () => {
     }
   ];
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-40 md:mb-20 sm:mb-15 scroll-mt-24">
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
@@ -54,7 +54,7 @@ const AboutSection = () => {
         viewport={{ once: true }}
         className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8"
       >
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+        <div className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-6 border border-gray-100 dark:border-gray-700">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
             My Mission
           </h3>
@@ -65,7 +65,7 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+        <div className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-6 border border-gray-100 dark:border-gray-700">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
             What Drives Me
           </h3>

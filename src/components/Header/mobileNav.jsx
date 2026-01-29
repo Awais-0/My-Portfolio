@@ -22,7 +22,7 @@ const MobileNav = ({ navLinks, toggleMenu, socialLinks, openContactForm, isOpen 
           <button
             key={item}
             onClick={() => handleScroll(item)}
-            className="text-left text-gray-300 font-medium py-2 focus:outline-none"
+            className="text-left text-gray-600 dark:text-gray-300 font-medium py-2 focus:outline-none"
           >
             {item}
           </button>
@@ -33,7 +33,7 @@ const MobileNav = ({ navLinks, toggleMenu, socialLinks, openContactForm, isOpen 
         <div className="flex space-x-5">
           {socialLinks.map((link, index) => (
             <a href={link.href} key={index}>
-              <link.icon className="h-5 w-5 text-gray-300" />
+              <link.icon className="h-5 w-5 text-gray-600 dark:text-gray-300" />
             </a>
           ))}
         </div>

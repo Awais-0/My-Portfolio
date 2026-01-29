@@ -7,9 +7,16 @@ body {
     padding: 0;
     width: 100%;
     position: relative;
-    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
-    color: white;
     scrollbar-width: none;
+}
+
+body {
+    @apply bg-white text-gray-900 dark:bg-[#0f0f1e] dark:text-white;
+    background-image: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+}
+
+.dark body {
+    background-image: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
 }
 
 body::-webkit-scrollbar {

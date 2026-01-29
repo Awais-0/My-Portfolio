@@ -25,7 +25,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-300 py-16 mt-20 border-t border-gray-700">
+    <footer className="bg-white dark:bg-[#0a0a14] text-gray-600 dark:text-gray-300 py-16 border-t border-gray-100 dark:border-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -39,7 +39,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
               M Awais Raza
             </h3>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-500 dark:text-gray-400 text-sm">
               Full-Stack Developer crafting digital experiences.
             </p>
           </motion.div>
@@ -51,7 +51,7 @@ const Footer = () => {
             transition={{ delay: 0.1, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-white mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -60,7 +60,7 @@ const Footer = () => {
                       const element = document.getElementById(link.id);
                       if (element) element.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm"
+                    className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-sm"
                   >
                     {link.label}
                   </button>
@@ -76,8 +76,8 @@ const Footer = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-white mb-4">Get in Touch</h4>
-            <p className="text-gray-400 text-sm mb-4">
+            <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Get in Touch</h4>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
               Interested in working together? Let's connect!
             </p>
             <motion.button
@@ -91,7 +91,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 my-8"></div>
+        <div className="border-t border-gray-100 dark:border-gray-800 my-8"></div>
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row items-center justify-between">
@@ -101,7 +101,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center md:text-left text-sm text-gray-400 mb-6 md:mb-0"
+            className="text-center md:text-left text-sm text-gray-500 dark:text-gray-400 mb-6 md:mb-0"
           >
             © {currentYear} M Awais Raza. All rights reserved.
           </motion.div>
@@ -122,7 +122,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 8 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                 title={link.label}
               >
                 <link.icon className="w-5 h-5" />
